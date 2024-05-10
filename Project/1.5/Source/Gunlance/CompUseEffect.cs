@@ -5,7 +5,7 @@ using RimWorld;
 namespace NewRatkin
 {
 	public class CompUseEffect_ReloadGunlance : CompUseEffect
-	{/*
+	{
 		public CompProperties_GunlanceReload Prop
 		{
 			get
@@ -37,34 +37,28 @@ namespace NewRatkin
 				parent.Destroy(DestroyMode.Vanish);
 			}
 		}
-
-
-		public override bool CanBeUsedBy(Pawn p, out string failReason)
+		public override AcceptanceReport CanBeUsedBy(Pawn p)
 		{
+			AcceptanceReport ar = true;
 			if (p.equipment == null || p.equipment.Primary == null)
 			{
-				failReason = null;
-				return false;
+				ar = false;
 			}
 			if (p.equipment.Primary.def.weaponTags==null || !(p.equipment.Primary.def == Prop.gunLanceDef) )
 			{
-				failReason = null;
-				return false;
+				ar = false;
 			}
 			CompRefuelable refuelable = p.equipment.Primary.GetComp<CompRefuelable>();
 			if (refuelable != null && refuelable.IsFull)
 			{
-				failReason = "FullAmmo".Translate();
-				return false;
+				ar = "FullAmmo".Translate();
 			}
-			failReason = null;
-			return true;
-		}*/
+			return ar;
+		}
 	}
 
 	public class CompProperties_GunlanceReload: CompProperties_UseEffect
 	{
-		/*
-		public ThingDef gunLanceDef;*/
+		public ThingDef gunLanceDef;
 	}
 }

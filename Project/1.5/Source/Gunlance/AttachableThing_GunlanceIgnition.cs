@@ -60,8 +60,8 @@ namespace NewRatkin
 				return new Color(1.75f - currentPower, 1.35f - currentPower*0.5f, currentPower*2-0.5f);
 			}
 		}
-		/*
-		public override void Draw()
+
+		protected override void DrawAt(Vector3 drawLoc, bool flip = false)
 		{
 			Vector3 targetVector;
 			if(parentPawn!=null&& parentPawn.stances!=null && parentPawn.stances.curStance!=null)
@@ -91,7 +91,7 @@ namespace NewRatkin
 				}
 			}
 
-		}*/
+		}
 		public override string InspectStringAddon
 		{
 			get
@@ -145,8 +145,7 @@ namespace NewRatkin
 			}
 		}
 
-		/*
-        public override void Draw()
+		protected override void DrawAt(Vector3 drawLoc, bool flip = false)
 		{
 			Vector3 targetVector;
 			if (parentPawn != null && parentPawn.stances != null && parentPawn.stances.curStance != null)
@@ -168,8 +167,7 @@ namespace NewRatkin
 				}
 			}
 
-		}*/
-
+		}
 		public override string InspectStringAddon
 		{
 			get

@@ -54,20 +54,7 @@ namespace NewRatkin
                 sustainer.Maintain();
                 Vector3 vector = Position.ToVector3Shifted();
                 IntVec3 c;
-
-                var findCellResult = CellFinder.TryFindRandomReachableCellNearPosition(
-                    Position,
-                    Position, 
-                    Map, 
-                    FilthSpawnRadius, 
-                    TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false),
-                    null, 
-                    null,
-                    out c,
-                    999999
-                );
-
-                if (Rand.MTBEventOccurs(FilthSpawnMTB, 1f, 5.TicksToSeconds()) && findCellResult)
+                if (Rand.MTBEventOccurs(FilthSpawnMTB, 1f, 5.TicksToSeconds()) && CellFinder.TryFindRandomReachableNearbyCell(Position, Map, FilthSpawnRadius, TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false), null, null, out c, 999999))
                 {
                     FilthMaker.TryMakeFilth(c, Map, RatkinTunnelUtility.filthTypes.RandomElement<ThingDef>(), 1);
                 }
@@ -94,7 +81,7 @@ namespace NewRatkin
             }
         }
 
-        public override void DynamicDrawPhaseAt(DrawPhase phase, Vector3 drawLoc, bool flip = false)
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             Rand.PushState();
             Rand.Seed = thingIDNumber;
@@ -176,7 +163,7 @@ namespace NewRatkin
                 sustainer.Maintain();
                 Vector3 vector = Position.ToVector3Shifted();
                 IntVec3 c;
-                if (Rand.MTBEventOccurs(FilthSpawnMTB, 1f, 1.TicksToSeconds()) && CellFinder.TryFindRandomReachableCellNearPosition(Position, Position, Map, FilthSpawnRadius, TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false), null, null, out c, 999999))
+                if (Rand.MTBEventOccurs(FilthSpawnMTB, 1f, 1.TicksToSeconds()) && CellFinder.TryFindRandomReachableNearbyCell(Position, Map, FilthSpawnRadius, TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false), null, null, out c, 999999))
                 {
                     FilthMaker.TryMakeFilth(c, Map, RatkinTunnelUtility.filthTypes.RandomElement(), 1);
                 }
@@ -205,7 +192,7 @@ namespace NewRatkin
             }
         }
 
-        public override void DynamicDrawPhaseAt(DrawPhase phase, Vector3 drawLoc, bool flip = false)
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             Rand.PushState();
             Rand.Seed = thingIDNumber;

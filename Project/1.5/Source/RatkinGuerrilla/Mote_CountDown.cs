@@ -28,9 +28,8 @@ namespace NewRatkin
             }
         }
 
-        public override void DynamicDrawPhaseAt(DrawPhase phase, Vector3 drawLoc, bool flip = false)
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            base.DynamicDrawPhaseAt(phase, drawLoc, flip);
         }
 
         public override void DrawGUIOverlay()

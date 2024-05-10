@@ -255,7 +255,7 @@ namespace NewRatkin
                 lord = CreateNewLord();
             }
             lord.AddPawn(pawn);
-            SoundDefOf.Door_OpenPowered.PlayOneShot(this);
+            SoundDefOf.CryptosleepCasket_Eject.PlayOneShot(this);
             Need rest = pawn.needs.TryGetNeed(NeedDefOf.Rest);
             rest.CurLevel = rest.MaxLevel;
             Need food = pawn.needs.TryGetNeed(NeedDefOf.Food);
