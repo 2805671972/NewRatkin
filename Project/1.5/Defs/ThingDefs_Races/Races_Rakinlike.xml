@@ -174,11 +174,23 @@
 						<li>
 							<drawSize>1</drawSize>
 							<path>Body/RK_Tail</path>
-							<bodyPartLabel>tail</bodyPartLabel>
 							<inFrontOfBody>false</inFrontOfBody>
 							<colorChannel>skin</colorChannel>
 							<defaultOffset>Tail</defaultOffset>
 							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<conditions>
+								<BodyPart>
+									<bodyPart>RK_RatTail</bodyPart>
+									<bodyPartLabel>tail</bodyPartLabel>
+									<drawWithoutPart>false</drawWithoutPart>
+								</BodyPart>
+								<Posture>
+									<drawnStanding>true</drawnStanding>
+									<drawnLaying>true</drawnLaying>
+									<drawnInBed>false</drawnInBed>
+								</Posture>
+								<RotStage>Fresh,Rotting</RotStage>
+							</conditions>
 							<offsets>
 								<south>
 									<bodyTypes>
@@ -202,18 +214,29 @@
 									</bodyTypes>
 								</east>
 							</offsets>
-							<drawnInBed>false</drawnInBed>
 						</li>
 						<li>
 							<drawSize>1</drawSize>
 							<path>Body/RK_EarLeft</path>
-							<bodyPartLabel>left ear</bodyPartLabel>
 							<inFrontOfBody>true</inFrontOfBody>
 							<colorChannel>skin</colorChannel>
 							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
 							<layerInvert>false</layerInvert>
 							<defaultOffset>Head</defaultOffset>
 							<alignWithHead>true</alignWithHead>
+							<conditions>
+								<BodyPart>
+									<bodyPart>Ear</bodyPart>
+									<bodyPartLabel>left ear</bodyPartLabel>
+									<drawWithoutPart>false</drawWithoutPart>
+								</BodyPart>
+								<Posture>
+									<drawnStanding>true</drawnStanding>
+									<drawnLaying>true</drawnLaying>
+									<drawnInBed>true</drawnInBed>
+								</Posture>
+								<RotStage>Fresh,Rotting</RotStage>
+							</conditions>
 							<offsets>
 								<south>
 									<bodyTypes>
@@ -252,18 +275,29 @@
 									</portraitBodyTypes>
 								</east>
 							</offsets>
-							<drawnInBed>True</drawnInBed>
 						</li>
 						<li>
 							<drawSize>1</drawSize>
 							<path>Body/RK_EarRight</path>
-							<bodyPartLabel>right ear</bodyPartLabel>
 							<inFrontOfBody>true</inFrontOfBody>
 							<colorChannel>skin</colorChannel>
 							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
 							<layerInvert>false</layerInvert>
 							<alignWithHead>true</alignWithHead>
 							<defaultOffset>Head</defaultOffset>
+							<conditions>
+								<BodyPart>
+									<bodyPart>Ear</bodyPart>
+									<bodyPartLabel>right ear</bodyPartLabel>
+									<drawWithoutPart>false</drawWithoutPart>
+								</BodyPart>
+								<Posture>
+									<drawnStanding>true</drawnStanding>
+									<drawnLaying>true</drawnLaying>
+									<drawnInBed>true</drawnInBed>
+								</Posture>
+								<RotStage>Fresh,Rotting</RotStage>
+							</conditions>
 							<offsets>
 								<south>
 									<bodyTypes>
@@ -302,7 +336,6 @@
 									</portraitBodyTypes>
 								</east>
 							</offsets>
-							<drawnInBed>True</drawnInBed>
 						</li>
 					</bodyAddons>
 				</alienPartGenerator>
@@ -561,6 +594,12 @@
 			<thinkTreeMain>Humanlike</thinkTreeMain>
 			<thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
 			<intelligence>Humanlike</intelligence>
+			<bloodDef>Filth_Blood</bloodDef>
+			<!--  -->
+			<renderTree>Humanlike</renderTree>
+			<!--  -->
+			<canBecomeShambler>true</canBecomeShambler>
+			<!--  -->
 			<makesFootprints>true</makesFootprints>
 			<lifeExpectancy>70</lifeExpectancy>
 			<leatherDef>Leather_Light</leatherDef>
