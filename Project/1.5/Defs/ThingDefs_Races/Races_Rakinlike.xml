@@ -355,7 +355,16 @@
 				</growthAges>
 			</generalSettings>
 			<graphicPaths>
-				<body>Things/Ratkin/Bodies/</body>
+				<body>
+					<path>Things/Ratkin/Bodies/Naked_Thin</path>
+					<ageGraphics>
+					  <HumanlikeAdult>Things/Ratkin/Bodies/Naked_Thin</HumanlikeAdult>
+					  <HumanlikeTeenager>Things/Ratkin/Bodies/Naked_Thin</HumanlikeTeenager>
+					  <HumanlikePreTeenager MayRequire="Ludeon.RimWorld.Biotech">Things/Ratkin/Bodies/Naked_Thin</HumanlikePreTeenager>
+					  <HumanlikeChild>Things/Ratkin/Bodies/Naked_Child</HumanlikeChild>
+					  <HumanlikeBaby>Things/Ratkin/Bodies/Naked_Baby</HumanlikeBaby>
+					</ageGraphics>
+				</body>
 				<head>Things/Ratkin/Heads/</head>
 			</graphicPaths>
 			<styleSettings>
